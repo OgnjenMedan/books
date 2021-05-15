@@ -11,7 +11,7 @@ import { BooksService } from '../services/books.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  books: any[] = [];
+  books: Book[] = [];
 
   objectBeforeEdit: any;
   valueAfterEdit: any;
@@ -21,7 +21,7 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService, private auditsService: AuditsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.booksService.getBooks().subscribe((data: any[]) => {
+    this.booksService.getBooks().subscribe((data: Book[]) => {
       this.books = data;
     })
   }

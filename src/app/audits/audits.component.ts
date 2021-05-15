@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Audit } from '../models/audit';
 import { AuditsService } from '../services/audits.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { AuditsService } from '../services/audits.service';
 })
 export class AuditsComponent implements OnInit {
 
-  audits: any[] = [];
+  audits: Audit[] = [];
   constructor(private auditsService: AuditsService) { }
 
   ngOnInit(): void {
-    this.auditsService.getAudits().subscribe((data: any[]) => {
+    this.auditsService.getAudits().subscribe((data: Audit[]) => {
       this.audits = data;
     });
   }
