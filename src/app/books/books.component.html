@@ -1,37 +1,37 @@
-
-    <dx-data-grid 
-        [dataSource]="books"
-        [showBorders]="true"
-        keyExpr="id"
-        class="data-grid"
-        (onEditingStart)="saveCellValue($event)"
-        (onRowUpdating)="saveNewCellValue($event)"
-        (onRowUpdated)="save($event)">
-        <dxo-editing 
-         mode="cell"
-         [allowUpdating]="true">
-        </dxo-editing>
-        <dxi-column 
-            dataField="id"
-            [width]="100"
-            [allowEditing]="false"
-        ></dxi-column>
-        <dxi-column dataField="title"></dxi-column>
-        <dxi-column dataField="shortDescription"
-            [allowFiltering]="false"
-            [allowSorting]="false"
-        >
-        </dxi-column>
-        <dxi-column dataField="publishDate"></dxi-column>
-        <dxi-column dataField="author"></dxi-column>
-        <dxi-column type="buttons" >
-            <dxi-button template="row">
-                <div *dxTemplate="let data of 'row'">
-                    <a routerLink='/book-details/{{data.key}}'>Details</a>
-                </div>
-            </dxi-button>
-        </dxi-column>
-        <dxo-filter-row [visible]="true"></dxo-filter-row>
-        <dxo-header-filter [visible]="true"></dxo-header-filter>
-        <dxo-paging [pageSize]="10"></dxo-paging>
-    </dx-data-grid>
+<h3>Books</h3>
+<dx-data-grid 
+    [dataSource]="books"
+    [showBorders]="true"
+    keyExpr="id"
+    class="data-grid"
+    (onEditingStart)="saveCellValue($event)"
+    (onRowUpdating)="saveNewCellValue($event)"
+    (onRowUpdated)="save($event)">
+    <dxo-editing 
+     mode="cell"
+     [allowUpdating]="true">
+    </dxo-editing>
+    <dxi-column 
+        dataField="id"
+        [width]="100"
+        [allowEditing]="false"
+    ></dxi-column>
+    <dxi-column dataField="title"></dxi-column>
+    <dxi-column dataField="shortDescription"
+        [allowFiltering]="false"
+        [allowSorting]="false"
+    >
+    </dxi-column>
+    <dxi-column dataField="publishDate"></dxi-column>
+    <dxi-column dataField="author"></dxi-column>
+    <dxi-column type="buttons" >
+        <dxi-button template="row">
+            <div *dxTemplate="let data of 'row'">
+                <a routerLink='/book-details/{{data.key}}'>Details</a>
+            </div>
+        </dxi-button>
+    </dxi-column>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxo-paging [pageSize]="10"></dxo-paging>
+</dx-data-grid>
